@@ -25,36 +25,43 @@ var calculatorModule = (function(){
       throw new Error('Not a real number');
     }
      _total += x;
+     return _total;
   }
   function subtract(x){
     if (typeof x !== 'number') {
       throw new Error('Not a real number');
     }
      _total -= x;
+     return _total;
   }
   function multiply(x) {
     if (typeof x !== 'number') {
       throw new Error('Not a real number');
     }
      _total *= x;
+     return _total;
    }
    function divide(x) {
     if (typeof x !== 'number') {
       throw new Error('Not a real number');
     }
      _total /= x;
+     return _total;
    }
   function recallMemory() {
       return _memory;
    }
   function saveMemory() {
       _memory = _total;
+      return _memory;
    }
   function clearMemory() {
       _memory = 0;
+      return _memory;
    }
    function resetMemory() {
       _total = _memory;
+      return _total;
    }
 
 return {
