@@ -10,60 +10,58 @@ var calculatorModule = (function(){
   var _total = 0;
   var calc = {
   };
-  function load(x) {
+// Error throw function
+  function isNum(x){
     if (typeof x !== 'number') {
       throw new Error('Not a real number');
     }
-      _total = x;
-      return _total;
+  }
+//Begin Functions
+function load(x) {
+    isNum(x);
+    _total = x;
+    return _total;
   }
   function getTotal() {
-      return _total;
+    return _total;
   }
   function add(x) {
-    if (typeof x !== 'number') {
-      throw new Error('Not a real number');
-    }
-     _total += x;
-     return _total;
+    isNum(x);
+    _total += x;
+    return _total;
   }
   function subtract(x){
-    if (typeof x !== 'number') {
-      throw new Error('Not a real number');
-    }
-     _total -= x;
-     return _total;
+    isNum(x);
+    _total -= x;
+    return _total;
   }
   function multiply(x) {
-    if (typeof x !== 'number') {
-      throw new Error('Not a real number');
-    }
-     _total *= x;
-     return _total;
+    isNum(x);
+    _total *= x;
+    return _total;
    }
    function divide(x) {
-    if (typeof x !== 'number') {
-      throw new Error('Not a real number');
-    }
-     _total /= x;
-     return _total;
+    isNum(x);
+    _total /= x;
+    return _total;
    }
   function recallMemory() {
-      return _memory;
+    return _memory;
    }
   function saveMemory() {
-      _memory = _total;
-      return _memory;
+    _memory = _total;
+    return _memory;
    }
   function clearMemory() {
-      _memory = 0;
-      return _memory;
+    _memory = 0;
+    return _memory;
    }
    function resetMemory() {
-      _total = _memory;
-      return _total;
+    _total = _memory;
+    return _total;
    }
 
+//Return keys
 return {
            load : load,
        getTotal : getTotal,
