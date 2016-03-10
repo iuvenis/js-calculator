@@ -1,3 +1,5 @@
+//DOES NOT WORK, USED AS REFERENCE WHEN REDOING
+
  /*
 function calculatorModule(){
   var newCalc = {
