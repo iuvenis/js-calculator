@@ -5,6 +5,71 @@
  * @variable PRIVATE { Number } `total`
  * @return {object} `calculator` object that can be used
  */
+var calculatorModule = (function(){
+  var _memory = 0;
+  var _total = 0;
+  var calc = {
+  };
+  function load(x) {
+    if (typeof x !== 'number') {
+      throw new Error('Not a real number');
+    }
+      _total = x;
+      return _total;
+  }
+  function getTotal() {
+      return _total;
+  }
+  function add(x) {
+    if (typeof x !== 'number') {
+      throw new Error('Not a real number');
+    }
+     _total += x;
+  }
+  function subtract(x){
+    if (typeof x !== 'number') {
+      throw new Error('Not a real number');
+    }
+     _total -= x;
+  }
+  function multiply(x) {
+    if (typeof x !== 'number') {
+      throw new Error('Not a real number');
+    }
+     _total *= x;
+   }
+   function divide(x) {
+    if (typeof x !== 'number') {
+      throw new Error('Not a real number');
+    }
+     _total /= x;
+   }
+  function recallMemory() {
+      return _memory;
+   }
+  function saveMemory() {
+      _memory = _total;
+   }
+  function clearMemory() {
+      _memory = 0;
+   }
+   function resetMemory() {
+      _total = _memory;
+   }
+
+return {
+           load : load,
+       getTotal : getTotal,
+            add : add,
+       subtract : subtract,
+       multiply : multiply,
+         divide : divide,
+   recallMemory : recallMemory,
+     saveMemory : saveMemory,
+    clearMemory : clearMemory,
+    resetMemory : resetMemory
+   };
+});
 
 
   /**
@@ -24,7 +89,6 @@
    * Sums the value passed in with `total`
    * @param { Number } x
    */
-
 
   /**
    * Subtracts the value passed in from `total`
@@ -63,3 +127,4 @@
    * Validation
    */
 
+//WHEN MESSGAGE RIGHT PUSH TO ARRAY
